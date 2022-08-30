@@ -2,16 +2,13 @@
 let result;
 let playerchoice;
 //Create a variable for computer input
-let computerchoice;
+let computerchoice = ("");
 //Ask for user input (store it in the variable)
 playerchoice = prompt("Rock, paper scissors?");
 playerchoice.toLowerCase();
 //Ask for a computer input (store it in the variable)
 function getcomputerchoice(){
-        var computerchoice = []
-        computerchoice[0] = "Rock"
-        computerchoice[1] = "Paper"
-        computerchoice[2] = "scissors"
+        var computerchoice = ["rock","paper", "scissors"];
         // Generate a random number between 0 and the words array length
         var index = Math.floor(Math.random() * computerchoice.length)
         // Return the picked index word
@@ -24,8 +21,12 @@ computerchoice.toLowerCase();
 	If you typed paper and computer choosed scissors, print You won!
 	If you typed scissors and computer choosed paper , print you won
 else print Computer Wins! */
-function  test(playerchoice){
-if (playerchoice == "rock") {
-    alert("you won");
+function matchRps (playerchoice,computerchoice){
+    if(playerchoice == computerchoice){
+        return alert("It is a tie!");
+    }
+    else{
+        return alert("sOMEONE ELSE WON");
+    }
 }
-}
+matchRps(playerchoice,computerchoice);
