@@ -1,5 +1,7 @@
 //Create a variable for user input and result of the match
 let playerchoice;
+var playerScore = 0;
+let computerScore = 0;
 //Ask for user input (store it in the variable)
 playerchoice = prompt("Rock, paper scissors?");
 
@@ -18,19 +20,19 @@ function getcomputerchoice(){
 else print Computer Wins! */
 function matchRps (playerchoice,computerchoice){
     if(playerchoice == computerchoice){
-        return alert("It is a tie!");
+        return alert("It is a tie!"), playerScore++ , computerScore++ ;
     }
     else if (playerchoice === "rock" && computerchoice === "scissors"){
-        return alert("Player won!");
+        return alert("Player won!"), playerScore++ ;
     }
     else if (playerchoice === "paper" && computerchoice === "rock"){
-        return alert("Player won!");
+        return alert("Player won!"), playerScore++ ;
     }
     else if (playerchoice === "scissors" && computerchoice === "paper"){
-        return alert("Player won!");
+        return alert("Player won!"), playerScore++ ;
     }
     else{
-        return alert("sOMEONE ELSE WON");
+        return alert("Computer wins!"), computerScore++;
     }
 }
 //Create a variable for computer input
@@ -38,3 +40,10 @@ const computerchoice = getcomputerchoice();
 
 getcomputerchoice();
 matchRps(playerchoice,computerchoice);
+
+//Function called game
+function game(){
+for (let i = 0; i < 5; i++) {
+   if (matchRps();)
+ }
+}
