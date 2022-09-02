@@ -20,21 +20,30 @@ function getcomputerchoice(){
 else print Computer Wins! */
 function matchRps (playerchoice,computerchoice){
     if(playerchoice == computerchoice){
-        return alert("It is a tie!"), playerScore++ , computerScore++ ;
+        return console.log("It is a tie!") ;
     }
     else if (playerchoice === "rock" && computerchoice === "scissors"){
-        return alert("Player won!"), playerScore++ ;
+        return console.log("Player won!" + playerScore++ + " points!") ;
     }
     else if (playerchoice === "paper" && computerchoice === "rock"){
-        return alert("Player won!"), playerScore++ ;
+        return console.log("Player won!" + playerScore++ + " points!") ;
     }
     else if (playerchoice === "scissors" && computerchoice === "paper"){
-        return alert("Player won!"), playerScore++ ;
+        return console.log("Player won!" +  playerScore++ + " points!" );
     }
     else{
-        return alert("Computer wins!"), computerScore++;
+        return console.log("Computer wins!" + computerScore++);
     }
 }
+ function checkWinner(){
+    if (computerScore === "5"){
+        return console.log("Computer WON the game!");
+    }
+    else if(playerScore===5){
+        return console.log("Player WON the game!");
+    }
+    else{}
+ }
 //Create a variable for computer input
 const computerchoice = getcomputerchoice();
 
@@ -42,8 +51,23 @@ getcomputerchoice();
 matchRps(playerchoice,computerchoice);
 
 //Function called game
-function game(){
-for (let i = 0; i < 5; i++) {
-   if (matchRps();)
- }
-}
+
+
+     function game(){
+        for (let i = 0; i < 5; i++) {
+            playerchoice = prompt("Rock, paper scissors?");
+            console.log(matchRps(playerchoice,getcomputerchoice()))
+            if (playerScore > computerScore) {
+                return "PLAYER WINS";
+            }
+            else if (playerScore < computerScore) {
+                return "COMPUTER WINS";
+            }
+
+        }
+return "Tie"
+    }
+
+game();
+
+console.log(game());
