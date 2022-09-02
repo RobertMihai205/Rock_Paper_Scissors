@@ -35,6 +35,7 @@ function matchRps (playerchoice,computerchoice){
         return console.log("Computer wins!" + computerScore++);
     }
 }
+
  function checkWinner(){
     if (computerScore === "5"){
         return console.log("Computer WON the game!");
@@ -45,29 +46,19 @@ function matchRps (playerchoice,computerchoice){
     else{}
  }
 //Create a variable for computer input
-const computerchoice = getcomputerchoice();
-
-getcomputerchoice();
-matchRps(playerchoice,computerchoice);
+let computerchoice = getcomputerchoice();
 
 //Function called game
 
 
-     function game(){
-        for (let i = 0; i < 5; i++) {
-            playerchoice = prompt("Rock, paper scissors?");
-            console.log(matchRps(playerchoice,getcomputerchoice()))
-            if (playerScore > computerScore) {
-                return "PLAYER WINS";
-            }
-            else if (playerScore < computerScore) {
-                return "COMPUTER WINS";
-            }
 
-        }
-return "Tie"
-    }
-
-game();
-
-console.log(game());
+function game(){
+for(var i=0;i<6;i++){
+    playerchoice = prompt("Pick a move");
+    computerchoice = getcomputerchoice()
+    console.log(matchRps(playerchoice, computerchoice))
+    console.log("your score = " + playerScore);
+    console.log("Computer's score = " + computerScore);
+  }
+  }
+  game();
