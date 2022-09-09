@@ -4,6 +4,11 @@ var playerScore = 0;
 let computerScore = 0;
 //Ask for user input (store it in the variable)
 playerchoice = prompt("Rock, paper scissors?");
+function choose(choice){
+    var choice;
+    playerchoice = choice;
+    return choice;
+}
 
 playerchoice.toLowerCase();
 
@@ -49,16 +54,10 @@ function matchRps (playerchoice,computerchoice){
 let computerchoice = getcomputerchoice();
 
 //Function called game
+const buttons = document.querySelectorAll('.element-button');
+buttons.forEach(button =>{
+    button.addEventListener('click',function(){
+        matchRps(button.value)
+    })
+})
 
-
-
-function game(){
-for(var i=0;i<6;i++){
-    playerchoice = prompt("Pick a move");
-    computerchoice = getcomputerchoice()
-    console.log(matchRps(playerchoice, computerchoice))
-    console.log("your score = " + playerScore);
-    console.log("Computer's score = " + computerScore);
-  }
-  }
-  game();
