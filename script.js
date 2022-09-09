@@ -1,13 +1,14 @@
-//Create a variable for user input and result of the match
+//Create a variable for user input and result of the match, and other global variables
 let playerchoice;
 var playerScore = 0;
 let computerScore = 0;
+const scoreBoard = document.querySelector('#scoreboard');
 //Ask for user input (store it in the variable)
 playerchoice = prompt("Rock, paper scissors?");
 function choose(choice){
     var choice;
     playerchoice = choice;
-    return choice;
+    return playerchoice;
 }
 
 playerchoice.toLowerCase();
@@ -60,4 +61,8 @@ buttons.forEach(button =>{
         matchRps(button.value)
     })
 })
+
+function setScores() {
+    playerBoard.innerHTML = playerScore;
+    aiBoard.innerHTML = computerScore;
 
